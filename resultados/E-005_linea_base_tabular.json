@@ -1,0 +1,230 @@
+{
+  "semilla": 20260912,
+  "etiqueta": "lvwt_gte_13_flag",
+  "faltantes_pct": {
+    "train": {
+      "age_at_ecg": 0.0,
+      "ventricular_rate": 0.0,
+      "pr_interval": 10.51,
+      "qrs_duration": 0.0,
+      "qt_corrected": 0.0
+    },
+    "val": {
+      "age_at_ecg": 0.0,
+      "ventricular_rate": 0.0,
+      "pr_interval": 10.14,
+      "qrs_duration": 0.0,
+      "qt_corrected": 0.0
+    },
+    "test": {
+      "age_at_ecg": 0.0,
+      "ventricular_rate": 0.0,
+      "pr_interval": 9.54,
+      "qrs_duration": 0.0,
+      "qt_corrected": 0.0
+    }
+  },
+  "modelos": {
+    "demografico": {
+      "columnas": [
+        "age_at_ecg",
+        "sexo_masculino"
+      ],
+      "c_elegido": 0.1,
+      "auc_val_por_c": {
+        "0.001": 0.6189,
+        "0.01": 0.6292,
+        "0.1": 0.6307,
+        "1.0": 0.6307,
+        "10.0": 0.6307
+      },
+      "umbral_youden_val": 0.1727,
+      "coeficientes_estandarizados": {
+        "continuas__age_at_ecg": 0.3818,
+        "remainder__sexo_masculino": 0.7085
+      },
+      "test": {
+        "n": 5442,
+        "positivos": 1061,
+        "auc": 0.6284,
+        "sensibilidad": 0.7531,
+        "especificidad": 0.451,
+        "auprc": 0.2719,
+        "brier": 0.1521,
+        "auc_ic95": [
+          0.6113,
+          0.6458
+        ]
+      },
+      "test_por_sexo": {
+        "female": {
+          "n": 2731,
+          "positivos": 399,
+          "auc": 0.649,
+          "sensibilidad": 0.4762,
+          "especificidad": 0.729
+        },
+        "male": {
+          "n": 2711,
+          "positivos": 662,
+          "auc": 0.5531,
+          "sensibilidad": 0.9199,
+          "especificidad": 0.1347
+        }
+      },
+      "test_por_edad": {
+        "[18, 40)": {
+          "n": 597,
+          "positivos": 56,
+          "auc": 0.6907,
+          "sensibilidad": 0.0,
+          "especificidad": 1.0
+        },
+        "[40, 50)": {
+          "n": 529,
+          "positivos": 77,
+          "auc": 0.6595,
+          "sensibilidad": 0.5455,
+          "especificidad": 0.7035
+        },
+        "[50, 60)": {
+          "n": 998,
+          "positivos": 191,
+          "auc": 0.608,
+          "sensibilidad": 0.712,
+          "especificidad": 0.4969
+        },
+        "[60, 70)": {
+          "n": 1318,
+          "positivos": 257,
+          "auc": 0.5676,
+          "sensibilidad": 0.6498,
+          "especificidad": 0.4722
+        },
+        "[70, 80)": {
+          "n": 1154,
+          "positivos": 237,
+          "auc": 0.5894,
+          "sensibilidad": 0.8903,
+          "especificidad": 0.2345
+        },
+        "[80, 91)": {
+          "n": 846,
+          "positivos": 243,
+          "auc": 0.5809,
+          "sensibilidad": 1.0,
+          "especificidad": 0.0
+        }
+      }
+    },
+    "tabular": {
+      "columnas": [
+        "age_at_ecg",
+        "sexo_masculino",
+        "ventricular_rate",
+        "pr_interval",
+        "qrs_duration",
+        "qt_corrected"
+      ],
+      "c_elegido": 1.0,
+      "auc_val_por_c": {
+        "0.001": 0.6708,
+        "0.01": 0.6739,
+        "0.1": 0.674,
+        "1.0": 0.6741,
+        "10.0": 0.6741
+      },
+      "umbral_youden_val": 0.1683,
+      "coeficientes_estandarizados": {
+        "continuas__age_at_ecg": 0.2671,
+        "continuas__ventricular_rate": 0.0188,
+        "continuas__pr_interval": 0.1732,
+        "continuas__qrs_duration": 0.1537,
+        "continuas__qt_corrected": 0.2453,
+        "continuas__missingindicator_pr_interval": 0.0945,
+        "continuas__missingindicator_qt_corrected": -0.0124,
+        "remainder__sexo_masculino": 0.5977
+      },
+      "test": {
+        "n": 5442,
+        "positivos": 1061,
+        "auc": 0.6775,
+        "sensibilidad": 0.7427,
+        "especificidad": 0.5172,
+        "auprc": 0.3119,
+        "brier": 0.1486,
+        "auc_ic95": [
+          0.6602,
+          0.6944
+        ]
+      },
+      "test_por_sexo": {
+        "female": {
+          "n": 2731,
+          "positivos": 399,
+          "auc": 0.6998,
+          "sensibilidad": 0.4862,
+          "especificidad": 0.7693
+        },
+        "male": {
+          "n": 2711,
+          "positivos": 662,
+          "auc": 0.6238,
+          "sensibilidad": 0.8973,
+          "especificidad": 0.2304
+        }
+      },
+      "test_por_edad": {
+        "[18, 40)": {
+          "n": 597,
+          "positivos": 56,
+          "auc": 0.7701,
+          "sensibilidad": 0.2857,
+          "especificidad": 0.9353
+        },
+        "[40, 50)": {
+          "n": 529,
+          "positivos": 77,
+          "auc": 0.7503,
+          "sensibilidad": 0.6104,
+          "especificidad": 0.8053
+        },
+        "[50, 60)": {
+          "n": 998,
+          "positivos": 191,
+          "auc": 0.686,
+          "sensibilidad": 0.6545,
+          "especificidad": 0.6097
+        },
+        "[60, 70)": {
+          "n": 1318,
+          "positivos": 257,
+          "auc": 0.6433,
+          "sensibilidad": 0.7198,
+          "especificidad": 0.4477
+        },
+        "[70, 80)": {
+          "n": 1154,
+          "positivos": 237,
+          "auc": 0.6314,
+          "sensibilidad": 0.8101,
+          "especificidad": 0.3446
+        },
+        "[80, 91)": {
+          "n": 846,
+          "positivos": 243,
+          "auc": 0.5897,
+          "sensibilidad": 0.9177,
+          "especificidad": 0.1874
+        }
+      }
+    }
+  },
+  "diferencia_auc_tabular_menos_demografico": {
+    "media": 0.0491,
+    "ic95": [
+      0.0373,
+      0.0608
+    ]
+  }
+}
