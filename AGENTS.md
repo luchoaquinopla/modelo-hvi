@@ -34,7 +34,22 @@ derivaciones**. Es el consumidor de los datos que produce el pipeline de anonimi
 
 - `exploracion/`: scripts de análisis de datos; escriben agregados en `resultados/`.
 - `herramientas/`: utilidades de verificación (por ejemplo, inspección de PDFs de ECG).
-- `resultados/`: salidas agregadas versionadas, que son la evidencia de los experimentos.
+- `notebooks/`: un notebook de Colab por experimento, `E-XXX_<tema>.ipynb`, **sin resultados
+  guardados**. La primera celda dice para qué sirve, qué datos usa, qué produce y qué reglas sigue.
+- `resultados/`: salidas agregadas versionadas, que son la evidencia de los experimentos
+  (`E-XXX_<tema>.json` para los que corren en Colab).
+
+## Cómputo en Colab (decisión D-009)
+
+El entrenamiento y la evaluación corren en Google Colab, no en la PC local. Copia de trabajo
+en Drive:
+
+- `MyDrive/modelo-hvi/datos/<fuente>/`: datos restringidos. Nunca se comparten.
+- `MyDrive/modelo-hvi/notebooks/E-XXX_<tema>.ipynb`: el mismo número que el experimento en Obsidian.
+- `MyDrive/modelo-hvi/resultados/E-XXX_<tema>.json`: solo agregados.
+
+Al cerrar un experimento, se copia el notebook al repo sin resultados y se copia el JSON.
+Nunca poner nombres de personas en rutas. Credenciales solo en Colab Secrets.
 
 ## Documentación del proyecto final
 
