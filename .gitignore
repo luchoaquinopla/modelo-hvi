@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Datos: nunca al repo (licencia restringida de PhysioNet / datos del instituto)
+datos/
+*.npy
+*.csv
+*.pdf

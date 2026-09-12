@@ -1,0 +1,648 @@
+{
+  "metadata": {
+    "filas": 100000,
+    "columnas": [
+      "Unnamed: 0",
+      "ecg_key",
+      "patient_key",
+      "age_at_ecg",
+      "sex",
+      "acquisition_year",
+      "location_setting",
+      "race_ethnicity",
+      "most_recent_ecg",
+      "ventricular_rate",
+      "atrial_rate",
+      "pr_interval",
+      "qrs_duration",
+      "qt_corrected",
+      "lvef_lte_45_flag",
+      "lvwt_gte_13_flag",
+      "aortic_stenosis_moderate_or_greater_flag",
+      "aortic_regurgitation_moderate_or_greater_flag",
+      "mitral_regurgitation_moderate_or_greater_flag",
+      "tricuspid_regurgitation_moderate_or_greater_flag",
+      "pulmonary_regurgitation_moderate_or_greater_flag",
+      "rv_systolic_dysfunction_moderate_or_greater_flag",
+      "pericardial_effusion_moderate_large_flag",
+      "pasp_gte_45_flag",
+      "tr_max_gte_32_flag",
+      "shd_moderate_or_greater_flag",
+      "aortic_stenosis_value",
+      "aortic_regurgitation_value",
+      "mitral_regurgitation_value",
+      "tricuspid_regurgitation_value",
+      "pulmonary_regurgitation_value",
+      "rv_systolic_function_value",
+      "pericardial_effusion_value",
+      "ivs_measurement",
+      "lvpw_measurement",
+      "pasp_value",
+      "tr_max_velocity_value",
+      "lvef_value",
+      "split"
+    ],
+    "filas_por_particion": {
+      "train": 72475,
+      "no_split": 17457,
+      "test": 5442,
+      "val": 4626
+    },
+    "etiqueta_por_particion": {
+      "test": {
+        "positivos": 1061,
+        "negativos": 4381,
+        "sin_etiqueta": 0,
+        "prevalencia_pct": 19.5
+      },
+      "train": {
+        "positivos": 17667,
+        "negativos": 54808,
+        "sin_etiqueta": 0,
+        "prevalencia_pct": 24.38
+      },
+      "val": {
+        "positivos": 877,
+        "negativos": 3749,
+        "sin_etiqueta": 0,
+        "prevalencia_pct": 18.96
+      }
+    },
+    "pacientes": {
+      "test": {
+        "pacientes_unicos": 5442,
+        "ecg_por_paciente_media": 1.0,
+        "ecg_por_paciente_max": 1
+      },
+      "train": {
+        "pacientes_unicos": 26218,
+        "ecg_por_paciente_media": 2.76,
+        "ecg_por_paciente_max": 146
+      },
+      "val": {
+        "pacientes_unicos": 4626,
+        "ecg_por_paciente_media": 1.0,
+        "ecg_por_paciente_max": 1
+      }
+    },
+    "pacientes_compartidos_entre_particiones": {
+      "test-train": 0,
+      "test-val": 0,
+      "train-val": 0
+    },
+    "mediciones_eco": {
+      "con_septum": 74779,
+      "con_pared_posterior": 74801,
+      "con_ambas": 74677,
+      "con_etiqueta_sin_mediciones": 7640,
+      "etiqueta_coincide_con_max_espesor_pct": 100.0,
+      "septum_cm": {
+        "count": 74779.0,
+        "mean": 1.112,
+        "std": 0.263,
+        "min": 0.1,
+        "25%": 0.9,
+        "50%": 1.1,
+        "75%": 1.2,
+        "max": 7.2
+      },
+      "pared_posterior_cm": {
+        "count": 74801.0,
+        "mean": 1.058,
+        "std": 0.222,
+        "min": 0.0,
+        "25%": 0.9,
+        "50%": 1.0,
+        "75%": 1.2,
+        "max": 6.4
+      },
+      "max_espesor_por_tramo_cm": {
+        "<1.0": 15327,
+        "1.0-1.1": 13789,
+        "1.1-1.3": 26182,
+        "1.3-1.5": 13455,
+        ">=1.5": 6150
+      }
+    },
+    "por_sexo": {
+      "female": {
+        "positivos": 6777,
+        "negativos": 31834,
+        "sin_etiqueta": 0,
+        "prevalencia_pct": 17.55
+      },
+      "male": {
+        "positivos": 12828,
+        "negativos": 31104,
+        "sin_etiqueta": 0,
+        "prevalencia_pct": 29.2
+      }
+    },
+    "edad_por_etiqueta": {
+      "sin_hvi": {
+        "count": 62938.0,
+        "mean": 60.68,
+        "std": 16.318,
+        "min": 18.0,
+        "25%": 50.0,
+        "50%": 63.0,
+        "75%": 73.0,
+        "max": 90.0
+      },
+      "con_hvi": {
+        "count": 19605.0,
+        "mean": 63.817,
+        "std": 15.034,
+        "min": 18.0,
+        "25%": 54.0,
+        "50%": 65.0,
+        "75%": 75.0,
+        "max": 90.0
+      }
+    },
+    "prevalencia_por_edad": {
+      "[18, 40)": {
+        "positivos": 1413,
+        "negativos": 7792,
+        "sin_etiqueta": 0,
+        "prevalencia_pct": 15.35
+      },
+      "[40, 50)": {
+        "positivos": 1869,
+        "negativos": 7102,
+        "sin_etiqueta": 0,
+        "prevalencia_pct": 20.83
+      },
+      "[50, 60)": {
+        "positivos": 3752,
+        "negativos": 11766,
+        "sin_etiqueta": 0,
+        "prevalencia_pct": 24.18
+      },
+      "[60, 70)": {
+        "positivos": 5330,
+        "negativos": 15826,
+        "sin_etiqueta": 0,
+        "prevalencia_pct": 25.19
+      },
+      "[70, 80)": {
+        "positivos": 4101,
+        "negativos": 12926,
+        "sin_etiqueta": 0,
+        "prevalencia_pct": 24.09
+      },
+      "[80, 91)": {
+        "positivos": 3140,
+        "negativos": 7526,
+        "sin_etiqueta": 0,
+        "prevalencia_pct": 29.44
+      }
+    },
+    "anio_adquisicion": {
+      "min": 2008,
+      "max": 2022
+    },
+    "ambito": {
+      "inpatient": 48162,
+      "emergency": 31453,
+      "outpatient": 17194,
+      "procedural": 3191
+    }
+  },
+  "senales": {
+    "forma_por_particion": {
+      "train": {
+        "forma": [
+          72475,
+          1,
+          2500,
+          12
+        ],
+        "tipo": "float64",
+        "coincide_con_metadata": true
+      },
+      "val": {
+        "forma": [
+          4626,
+          1,
+          2500,
+          12
+        ],
+        "tipo": "float64",
+        "coincide_con_metadata": true
+      },
+      "test": {
+        "forma": [
+          5442,
+          1,
+          2500,
+          12
+        ],
+        "tipo": "float64",
+        "coincide_con_metadata": true
+      }
+    },
+    "muestra": {
+      "particion": "val",
+      "ecg": 1000,
+      "semilla": 20260912
+    },
+    "estadisticas_por_columna": [
+      {
+        "columna": 0,
+        "media": 0.0193,
+        "desvio": 0.9384,
+        "p01": -1.463,
+        "p99": 4.735,
+        "nan": 0
+      },
+      {
+        "columna": 1,
+        "media": 0.0106,
+        "desvio": 0.9359,
+        "p01": -1.989,
+        "p99": 4.036,
+        "nan": 0
+      },
+      {
+        "columna": 2,
+        "media": -0.0081,
+        "desvio": 0.9633,
+        "p01": -4.083,
+        "p99": 2.351,
+        "nan": 0
+      },
+      {
+        "columna": 3,
+        "media": -0.0173,
+        "desvio": 0.9306,
+        "p01": -4.59,
+        "p99": 1.454,
+        "nan": 0
+      },
+      {
+        "columna": 4,
+        "media": 0.0154,
+        "desvio": 0.9564,
+        "p01": -1.778,
+        "p99": 4.699,
+        "nan": 0
+      },
+      {
+        "columna": 5,
+        "media": 0.001,
+        "desvio": 0.9504,
+        "p01": -2.934,
+        "p99": 3.204,
+        "nan": 0
+      },
+      {
+        "columna": 6,
+        "media": -0.0041,
+        "desvio": 0.9402,
+        "p01": -4.521,
+        "p99": 1.759,
+        "nan": 0
+      },
+      {
+        "columna": 7,
+        "media": 0.0155,
+        "desvio": 0.9363,
+        "p01": -4.215,
+        "p99": 2.283,
+        "nan": 0
+      },
+      {
+        "columna": 8,
+        "media": 0.0149,
+        "desvio": 0.9227,
+        "p01": -3.978,
+        "p99": 2.348,
+        "nan": 0
+      },
+      {
+        "columna": 9,
+        "media": 0.0196,
+        "desvio": 0.938,
+        "p01": -2.978,
+        "p99": 3.454,
+        "nan": 0
+      },
+      {
+        "columna": 10,
+        "media": 0.0195,
+        "desvio": 0.9504,
+        "p01": -2.098,
+        "p99": 4.324,
+        "nan": 0
+      },
+      {
+        "columna": 11,
+        "media": 0.0143,
+        "desvio": 0.9398,
+        "p01": -1.578,
+        "p99": 4.591,
+        "nan": 0
+      }
+    ],
+    "ecg_totalmente_planos": 0,
+    "dependencia_lineal_por_columna": {
+      "0": {
+        "r2_max_con_dos_columnas": 0.9943,
+        "par": [
+          3,
+          4
+        ]
+      },
+      "1": {
+        "r2_max_con_dos_columnas": 0.9954,
+        "par": [
+          3,
+          5
+        ]
+      },
+      "2": {
+        "r2_max_con_dos_columnas": 0.9958,
+        "par": [
+          4,
+          5
+        ]
+      },
+      "3": {
+        "r2_max_con_dos_columnas": 0.9954,
+        "par": [
+          0,
+          1
+        ]
+      },
+      "4": {
+        "r2_max_con_dos_columnas": 0.9956,
+        "par": [
+          0,
+          2
+        ]
+      },
+      "5": {
+        "r2_max_con_dos_columnas": 0.9967,
+        "par": [
+          1,
+          2
+        ]
+      },
+      "6": {
+        "r2_max_con_dos_columnas": 0.7914,
+        "par": [
+          3,
+          7
+        ]
+      },
+      "7": {
+        "r2_max_con_dos_columnas": 0.6997,
+        "par": [
+          6,
+          8
+        ]
+      },
+      "8": {
+        "r2_max_con_dos_columnas": 0.7368,
+        "par": [
+          7,
+          9
+        ]
+      },
+      "9": {
+        "r2_max_con_dos_columnas": 0.8876,
+        "par": [
+          8,
+          10
+        ]
+      },
+      "10": {
+        "r2_max_con_dos_columnas": 0.925,
+        "par": [
+          9,
+          11
+        ]
+      },
+      "11": {
+        "r2_max_con_dos_columnas": 0.8398,
+        "par": [
+          6,
+          10
+        ]
+      }
+    },
+    "hipotesis_orden_estandar": {
+      "III": {
+        "columna": 2,
+        "r2": 0.973,
+        "coef_col0": -1.059,
+        "coef_col1": 1.02,
+        "teorico": [
+          -1.0,
+          1.0
+        ]
+      },
+      "aVR": {
+        "columna": 3,
+        "r2": 0.9954,
+        "coef_col0": -0.574,
+        "coef_col1": -0.559,
+        "teorico": [
+          -0.5,
+          -0.5
+        ]
+      },
+      "aVL": {
+        "columna": 4,
+        "r2": 0.9854,
+        "coef_col0": 1.187,
+        "coef_col1": -0.567,
+        "teorico": [
+          1.0,
+          -0.5
+        ]
+      },
+      "aVF": {
+        "columna": 5,
+        "r2": 0.987,
+        "coef_col0": -0.609,
+        "coef_col1": 1.184,
+        "teorico": [
+          -0.5,
+          1.0
+        ]
+      }
+    },
+    "correlacion_entre_columnas": [
+      [
+        1.0,
+        0.53,
+        -0.51,
+        -0.88,
+        0.87,
+        0.01,
+        -0.68,
+        -0.25,
+        -0.13,
+        0.3,
+        0.54,
+        0.67
+      ],
+      [
+        0.53,
+        1.0,
+        0.45,
+        -0.87,
+        0.06,
+        0.85,
+        -0.51,
+        -0.17,
+        0.18,
+        0.6,
+        0.75,
+        0.77
+      ],
+      [
+        -0.51,
+        0.45,
+        1.0,
+        0.05,
+        -0.86,
+        0.85,
+        0.2,
+        0.09,
+        0.32,
+        0.28,
+        0.19,
+        0.07
+      ],
+      [
+        -0.88,
+        -0.87,
+        0.05,
+        1.0,
+        -0.54,
+        -0.48,
+        0.68,
+        0.24,
+        -0.03,
+        -0.51,
+        -0.74,
+        -0.82
+      ],
+      [
+        0.87,
+        0.06,
+        -0.86,
+        -0.54,
+        1.0,
+        -0.47,
+        -0.51,
+        -0.19,
+        -0.25,
+        0.02,
+        0.22,
+        0.35
+      ],
+      [
+        0.01,
+        0.85,
+        0.85,
+        -0.48,
+        -0.47,
+        1.0,
+        -0.18,
+        -0.05,
+        0.29,
+        0.52,
+        0.55,
+        0.5
+      ],
+      [
+        -0.68,
+        -0.51,
+        0.2,
+        0.68,
+        -0.51,
+        -0.18,
+        1.0,
+        0.72,
+        0.48,
+        -0.05,
+        -0.37,
+        -0.57
+      ],
+      [
+        -0.25,
+        -0.17,
+        0.09,
+        0.24,
+        -0.19,
+        -0.05,
+        0.72,
+        1.0,
+        0.72,
+        0.33,
+        0.01,
+        -0.21
+      ],
+      [
+        -0.13,
+        0.18,
+        0.32,
+        -0.03,
+        -0.25,
+        0.29,
+        0.48,
+        0.72,
+        1.0,
+        0.68,
+        0.33,
+        0.06
+      ],
+      [
+        0.3,
+        0.6,
+        0.28,
+        -0.51,
+        0.02,
+        0.52,
+        -0.05,
+        0.33,
+        0.68,
+        1.0,
+        0.84,
+        0.6
+      ],
+      [
+        0.54,
+        0.75,
+        0.19,
+        -0.74,
+        0.22,
+        0.55,
+        -0.37,
+        0.01,
+        0.33,
+        0.84,
+        1.0,
+        0.88
+      ],
+      [
+        0.67,
+        0.77,
+        0.07,
+        -0.82,
+        0.35,
+        0.5,
+        -0.57,
+        -0.21,
+        0.06,
+        0.6,
+        0.88,
+        1.0
+      ]
+    ]
+  }
+}
