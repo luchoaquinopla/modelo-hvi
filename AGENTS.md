@@ -33,8 +33,8 @@ derivaciones**. Es el consumidor de los datos que produce el pipeline de anonimi
 ## Estructura
 
 - `modelo_hvi/`: formato único de entrada (ECG + máscara) y adaptadores por fuente
-  (patrón Strategy, uno por origen de datos). Se instala en Colab con
-  `pip install --no-deps git+https://...`.
+  (patrón Strategy, uno por origen de datos). En Colab se usa una copia en
+  `MyDrive/modelo-hvi/codigo/` con el commit de origen en `codigo/COMMIT`.
 - `pruebas/`: tests unitarios de `modelo_hvi/`, todos con datos sintéticos. `uv run pytest`.
 - `exploracion/`: scripts de análisis de datos; escriben agregados en `resultados/`.
 - `herramientas/`: utilidades de verificación (por ejemplo, inspección de PDFs de ECG).
