@@ -226,5 +226,245 @@
       0.0373,
       0.0608
     ]
+  },
+  "control_algoritmo": {
+    "boosting": {
+      "config_elegida": {
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "max_iter": 100
+      },
+      "auc_val_por_config": [
+        {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 15,
+          "max_iter": 100,
+          "auc": 0.691
+        },
+        {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 15,
+          "max_iter": 300,
+          "auc": 0.6892
+        },
+        {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 31,
+          "max_iter": 100,
+          "auc": 0.6852
+        },
+        {
+          "learning_rate": 0.05,
+          "max_leaf_nodes": 31,
+          "max_iter": 300,
+          "auc": 0.6823
+        },
+        {
+          "learning_rate": 0.1,
+          "max_leaf_nodes": 15,
+          "max_iter": 100,
+          "auc": 0.69
+        },
+        {
+          "learning_rate": 0.1,
+          "max_leaf_nodes": 15,
+          "max_iter": 300,
+          "auc": 0.6863
+        },
+        {
+          "learning_rate": 0.1,
+          "max_leaf_nodes": 31,
+          "max_iter": 100,
+          "auc": 0.6815
+        },
+        {
+          "learning_rate": 0.1,
+          "max_leaf_nodes": 31,
+          "max_iter": 300,
+          "auc": 0.6727
+        }
+      ],
+      "umbral_youden_val": 0.2286,
+      "test": {
+        "n": 5442,
+        "positivos": 1061,
+        "auc": 0.6947,
+        "sensibilidad": 0.591,
+        "especificidad": 0.6873,
+        "auprc": 0.3291,
+        "brier": 0.1457,
+        "auc_ic95": [
+          0.6784,
+          0.7118
+        ]
+      },
+      "test_por_sexo": {
+        "female": {
+          "n": 2731,
+          "positivos": 399,
+          "auc": 0.7138,
+          "sensibilidad": 0.3634,
+          "especificidad": 0.8572
+        },
+        "male": {
+          "n": 2711,
+          "positivos": 662,
+          "auc": 0.6487,
+          "sensibilidad": 0.7281,
+          "especificidad": 0.4939
+        }
+      },
+      "test_por_edad": {
+        "[18, 40)": {
+          "n": 597,
+          "positivos": 56,
+          "auc": 0.7585,
+          "sensibilidad": 0.3393,
+          "especificidad": 0.9335
+        },
+        "[40, 50)": {
+          "n": 529,
+          "positivos": 77,
+          "auc": 0.7617,
+          "sensibilidad": 0.5584,
+          "especificidad": 0.8319
+        },
+        "[50, 60)": {
+          "n": 998,
+          "positivos": 191,
+          "auc": 0.7025,
+          "sensibilidad": 0.5497,
+          "especificidad": 0.7472
+        },
+        "[60, 70)": {
+          "n": 1318,
+          "positivos": 257,
+          "auc": 0.6528,
+          "sensibilidad": 0.537,
+          "especificidad": 0.6824
+        },
+        "[70, 80)": {
+          "n": 1154,
+          "positivos": 237,
+          "auc": 0.6401,
+          "sensibilidad": 0.5823,
+          "especificidad": 0.6303
+        },
+        "[80, 91)": {
+          "n": 846,
+          "positivos": 243,
+          "auc": 0.6116,
+          "sensibilidad": 0.7572,
+          "especificidad": 0.3731
+        }
+      },
+      "diferencia_auc_menos_logistica": {
+        "media": 0.0174,
+        "ic95": [
+          0.0096,
+          0.0249
+        ]
+      }
+    },
+    "mlp": {
+      "config_elegida": {
+        "alpha": 0.01
+      },
+      "auc_val_por_config": [
+        {
+          "alpha": 0.0001,
+          "auc": 0.6792
+        },
+        {
+          "alpha": 0.001,
+          "auc": 0.6771
+        },
+        {
+          "alpha": 0.01,
+          "auc": 0.6818
+        }
+      ],
+      "umbral_youden_val": 0.1925,
+      "test": {
+        "n": 5442,
+        "positivos": 1061,
+        "auc": 0.6854,
+        "sensibilidad": 0.623,
+        "especificidad": 0.6423,
+        "auprc": 0.3325,
+        "brier": 0.1469,
+        "auc_ic95": [
+          0.6693,
+          0.7022
+        ]
+      },
+      "test_por_sexo": {
+        "female": {
+          "n": 2731,
+          "positivos": 399,
+          "auc": 0.702,
+          "sensibilidad": 0.4185,
+          "especificidad": 0.8113
+        },
+        "male": {
+          "n": 2711,
+          "positivos": 662,
+          "auc": 0.6372,
+          "sensibilidad": 0.7462,
+          "especificidad": 0.45
+        }
+      },
+      "test_por_edad": {
+        "[18, 40)": {
+          "n": 597,
+          "positivos": 56,
+          "auc": 0.7444,
+          "sensibilidad": 0.3036,
+          "especificidad": 0.9205
+        },
+        "[40, 50)": {
+          "n": 529,
+          "positivos": 77,
+          "auc": 0.7688,
+          "sensibilidad": 0.5455,
+          "especificidad": 0.8186
+        },
+        "[50, 60)": {
+          "n": 998,
+          "positivos": 191,
+          "auc": 0.7005,
+          "sensibilidad": 0.6021,
+          "especificidad": 0.7125
+        },
+        "[60, 70)": {
+          "n": 1318,
+          "positivos": 257,
+          "auc": 0.6401,
+          "sensibilidad": 0.5409,
+          "especificidad": 0.6428
+        },
+        "[70, 80)": {
+          "n": 1154,
+          "positivos": 237,
+          "auc": 0.6216,
+          "sensibilidad": 0.6287,
+          "especificidad": 0.5529
+        },
+        "[80, 91)": {
+          "n": 846,
+          "positivos": 243,
+          "auc": 0.6101,
+          "sensibilidad": 0.8189,
+          "especificidad": 0.3018
+        }
+      },
+      "diferencia_auc_menos_logistica": {
+        "media": 0.0082,
+        "ic95": [
+          -0.0035,
+          0.0194
+        ]
+      }
+    }
   }
 }
